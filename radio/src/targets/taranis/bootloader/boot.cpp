@@ -29,7 +29,7 @@
   #error "Not implemented"
 #endif
 
-#if defined(PCBX9E) || defined(PCBX7)
+#if defined(PCBX9E) || defined(PCBX7) || defined(PCBXXX)
   #define BOOT_KEY_UP                  KEY_MINUS
   #define BOOT_KEY_DOWN                KEY_PLUS
 #else
@@ -128,7 +128,7 @@ void interrupt10ms(void)
     ++index;
   }
 
-#if defined(PCBX9E) || defined(PCBX7)
+#if defined(PCBX9E) || defined(PCBX7) || defined(PCBXXX)
   checkRotaryEncoder();
   static rotenc_t rePreviousValue;
   rotenc_t reNewValue = (rotencValue[0] / 2);
@@ -619,7 +619,7 @@ int main()
     }
 
     if (state != ST_FLASHING && state != ST_USB) {
-#if defined(PCBX9E) || defined(PCBX7)
+#if defined(PCBX9E) || defined(PCBX7) || defined(PCBXXX)
       if (pwrPressed()) {
 #else
       if (pwrCheck() == e_power_off) {

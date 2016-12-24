@@ -34,7 +34,7 @@ extern "C" {
 #pragma clang diagnostic ignored "-Wdeprecated-register"
 #endif
 
-#if defined(PCBX9E)
+#if defined(PCBX9E) || defined(PCBXXX)
   #include "STM32F4xx_DSP_StdPeriph_Lib_V1.4.0/Libraries/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
   #include "STM32F4xx_DSP_StdPeriph_Lib_V1.4.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_rcc.h"
   #include "STM32F4xx_DSP_StdPeriph_Lib_V1.4.0/Libraries/STM32F4xx_StdPeriph_Driver/inc/stm32f4xx_gpio.h"
@@ -311,7 +311,7 @@ enum EnumSwitchesPositions
   SW_SR2,
 #endif
 };
-#if defined(PCBX7)
+#if defined(PCBX7) || defined(PCBXXX)
   #define NUM_SWITCHES                 6
 #elif defined(PCBX9E)
   #define NUM_SWITCHES                 18 // yes, it's a lot!
@@ -326,7 +326,7 @@ uint32_t readTrims(void);
 #define TRIMS_PRESSED()            (readTrims())
 #define KEYS_PRESSED()             (readKeys())
 
-#if defined(PCBX9E) || defined(PCBX7)
+#if defined(PCBX9E) || defined(PCBX7) || defined(PCBXXX)
 // Rotary Encoder driver
 #define ROTARY_ENCODER_NAVIGATION
 void checkRotaryEncoder(void);
@@ -356,7 +356,7 @@ enum Analogs {
   POT_FIRST,
   POT1 = POT_FIRST,
   POT2,
-#if defined(PCBX7)
+#if defined(PCBX7) || defined(PCBXXX)
   POT_LAST = POT2,
 #elif defined(PCBX9E)
   POT3,
@@ -542,7 +542,7 @@ void lcdInitFinish(void);
 void lcdOff(void);
 
 // TODO lcdRefreshWait() stub in simpgmspace and remove LCD_DUAL_BUFFER
-#if (defined(PCBX9E) || defined(PCBX9DP) || defined(PCBX7)) && !defined(LCD_DUAL_BUFFER) && !defined(SIMU)
+#if (defined(PCBX9E) || defined(PCBX9DP) || defined(PCBX7) || defined(PCBXXX)) && !defined(LCD_DUAL_BUFFER) && !defined(SIMU)
 void lcdRefreshWait();
 #else
 #define lcdRefreshWait()
