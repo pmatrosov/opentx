@@ -73,10 +73,14 @@ elseif(PCB STREQUAL XXX)
   set(CPU_TYPE STM32F4)
   set(LINKER_SCRIPT targets/taranis/stm32f4_flash.ld)
   set(HAPTIC YES)
-  set(LUA_EXPORT lua_export_x7)
-  set(FLAVOUR x7)
+  set(LUA_EXPORT lua_export_xxx)
+  set(FLAVOUR xxx)
   add_definitions(-DSTM32F40_41xxx -DPCBXXX -DSOFTWARE_VOLUME)
   add_definitions(-DEEPROM_VARIANT=0)
+  set(FIRMWARE_TARGET_SRC
+    ${FIRMWARE_TARGET_SRC}
+    startup_stm32f40_41xxx.s
+    )
   set(SERIAL2_DRIVER ../common/arm/stm32/serial2_driver.cpp)
   set(GUI_DIR 128x64)
   set(BITMAPS_TARGET 9x_bitmaps)
