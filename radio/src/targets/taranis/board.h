@@ -91,7 +91,7 @@ extern "C" {
 #define BOOTLOADER_SIZE    0x8000
 #define FIRMWARE_ADDRESS   0x08000000
 
-#if defined(PCBX9E)
+#if defined(PCBX9E) || defined(PCBXXX) 
   #define PERI1_FREQUENCY  42000000
   #define PERI2_FREQUENCY  84000000
 #else
@@ -109,8 +109,10 @@ extern uint16_t sessionTimer;
 
 #define SLAVE_MODE()                   (g_model.trainerMode == TRAINER_MODE_SLAVE)
 
-#if defined(PCBX9E)
+#if defined(PCBX9E) 
 #define TRAINER_CONNECTED()            (true)
+#elif defined(PCBXXX)
+#define TRAINER_CONNECTED()            (false)
 #else
 #define TRAINER_CONNECTED()            (GPIO_ReadInputDataBit(TRAINER_DETECT_GPIO, TRAINER_DETECT_GPIO_PIN) == Bit_RESET)
 #endif
@@ -262,7 +264,7 @@ enum EnumSwitchesPositions
   SW_SD0,
   SW_SD1,
   SW_SD2,
-#if !defined(PCBX7)
+#if !defined(PCBX7) && !defined(PCBXXX)
   SW_SE0,
   SW_SE1,
   SW_SE2,
@@ -270,7 +272,7 @@ enum EnumSwitchesPositions
   SW_SF0,
   SW_SF1,
   SW_SF2,
-#if !defined(PCBX7)
+#if !defined(PCBX7) && !defined(PCBXXX)
   SW_SG0,
   SW_SG1,
   SW_SG2,
@@ -520,7 +522,7 @@ void ledGreen(void);
 void ledBlue(void);
 
 // LCD driver
-#if defined(PCBX7)
+#if defined(PCBX7) || defined(PCBXXX)
 #define LCD_W                          128
 #define LCD_H                          64
 #define LCD_DEPTH                      1

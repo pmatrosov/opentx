@@ -20,7 +20,7 @@
 
 #include "opentx.h"
 
-#if defined(PCBX9E) || defined(PCBX9DP)
+#if defined(PCBX9E) || defined(PCBX9DP) 
 void hapticOff(void)
 {
   HAPTIC_TIMER->CCR1 = 0;

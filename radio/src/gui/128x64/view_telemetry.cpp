@@ -506,7 +506,7 @@ void incrTelemetryScreen()
 }
 #endif
 
-#if defined(PCBX7)
+#if defined(PCBX7) || defined(PCBXXX)
 #define EVT_KEY_PREVIOUS_VIEW          EVT_KEY_LONG(KEY_PAGE)
 #define EVT_KEY_NEXT_VIEW              EVT_KEY_BREAK(KEY_PAGE)
 #else

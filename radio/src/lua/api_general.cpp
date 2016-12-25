@@ -29,9 +29,9 @@
   #include "lua/lua_exports_horus.inc"   // this line must be after lua headers
 #elif defined(PCBFLAMENCO)
   #include "lua/lua_exports_flamenco.inc"
-#elif defined(PCBX9E)
+#elif defined(PCBX9E) 
   #include "lua/lua_exports_x9e.inc"
-#elif defined(PCBX7)
+#elif defined(PCBX7) || defined(PCBXXX)
   #include "lua/lua_exports_x7.inc"
 #elif defined(PCBTARANIS)
   #include "lua/lua_exports_x9d.inc"

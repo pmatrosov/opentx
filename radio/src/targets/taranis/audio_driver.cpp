@@ -128,7 +128,7 @@ extern "C" void AUDIO_TIM_IRQHandler()
 {
   DEBUG_INTERRUPT(INT_AUDIO);
   DAC->CR &= ~DAC_CR_DMAEN1 ;     // Stop DMA requests
-#if !defined(PCBX9E)
+#if !defined(PCBX9E) && !defined(PCBXXX)
   DAC->CR &= ~DAC_CR_DMAUDRIE1 ;  // Stop underrun interrupt
 #endif
   DAC->SR = DAC_SR_DMAUDR1 ;      // Write 1 to clear flag

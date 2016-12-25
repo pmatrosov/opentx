@@ -127,7 +127,7 @@ uint32_t isFirmwareStart(const uint8_t * buffer)
 {
   const uint32_t * block = (const uint32_t *)buffer;
 
-#if defined(PCBX9E)
+#if defined(PCBX9E) || defined(PCBXXX) 
   if ((block[0] & 0xFFFC0000) != 0x10000000 && (block[0] & 0xFFFC0000) != 0x20000000) {
     return 0;
   }

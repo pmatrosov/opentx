@@ -20,7 +20,7 @@
 
 #include "opentx.h"
 
-#if defined(PCBX9E)
+#if defined(PCBX9E) || defined(PCBXXX)
 void backlightInit()
 {
   GPIO_InitTypeDef GPIO_InitStructure;

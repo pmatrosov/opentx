@@ -257,7 +257,7 @@ class OpenTxSimulatorFactory: public SimulatorFactory
       return BOARD_HORUS;
 #elif defined(PCBFLAMENCO)
       return BOARD_FLAMENCO;
-#elif defined(PCBX7)
+#elif defined(PCBX7) || defined(PCBXXX)
       return BOARD_TARANIS_X7;
 #elif defined(PCBTARANIS)
       return BOARD_TARANIS_X9D;

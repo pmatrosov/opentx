@@ -1055,7 +1055,7 @@ static inline void check_struct()
 
   /* LEN_FUNCTION_NAME is the difference in CustomFunctionData */
 
-#if defined(PCBX7)
+#if defined(PCBX7) || defined(PCBXXX)
   // TODO
 #elif defined(PCBTARANIS)
   CHKSIZE(MixData, 22);
@@ -1076,7 +1076,7 @@ static inline void check_struct()
 #if defined(PCBX9E)
   CHKSIZE(RadioData, 952);
   CHKSIZE(ModelData, 6520);
-#elif defined(PCBX7)
+#elif defined(PCBX7) || defined(PCBXXX)
   CHKSIZE(RadioData, 839);
   CHKSIZE(ModelData, 6504);
 #else

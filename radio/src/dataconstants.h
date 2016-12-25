@@ -159,7 +159,7 @@ enum CurveType {
   #define LEN_FUNCTION_NAME            8
   #define MAX_CURVES                   32
   #define MAX_CURVE_POINTS             512
-#elif defined(PCBSKY9X) || defined(PCBX7)
+#elif defined(PCBSKY9X) || defined(PCBX7) || defined(PCBXXX)
   #define LEN_MODEL_NAME               10
   #define LEN_TIMER_NAME               3
   #define LEN_FLIGHT_MODE_NAME         6
